@@ -4,12 +4,15 @@
   <div>
     <h1>My Weather App</h1>
     <button v-on:click="getWeatherData">Get Weather Data</button>
-    <div v-for="weatherData in weatherDataList" :key="weatherData.id" class="weather-data">
-    <pre>{{JSON.stringify(weatherData, null, 2)}}</pre>
+    <div v-for="weather in weatherDataList" :key="weather.id" class="weather-data">
+    <pre>{{JSON.stringify(weather, null, 2)}}</pre>
     <div class="weather-stats">
       </div>
       <div>
-          <span class="location">{{weatherData.location}}</span>
+          <span class="location">{{weather.id}}</span>
+          <br/>
+          <span class="location">{{weather.coord.lon}}</span>
+          <span class="location">{{weather.weather[0].description}}</span>
         </div>
     </div>
   </div>
