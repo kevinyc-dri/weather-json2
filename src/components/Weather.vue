@@ -2,7 +2,7 @@
 
 <template>
 	<div>
-		<h1>My Weather App</h1>
+		<h1>Vue Weather App</h1>
 	
 		<!-- Modal -->
 		<div
@@ -163,7 +163,7 @@ export default {
 
 <style scoped>
 .weather-data {
-	background-color: wheat;
+	background-color: rgba(70, 70, 70, 0.301);
 	display: flex;
 	align-items: center;
 	margin-top: 20px;
@@ -214,7 +214,8 @@ export default {
 }
 
 .modal-body {
-	background-color: yellowgreen;
+	background-color: rgb(112, 191, 255);
+	font-weight: bold;
 }
 
 button {
