@@ -25,7 +25,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="exampleModalLabel">
-              {{currentWeather.name}}
+							{{ currentWeather.name }}
 						</h5>
 						<button
 							type="button"
@@ -37,7 +37,48 @@
 						</button>
 					</div>
 					<div class="modal-body">
-              {{currentWeather.main}}
+						Current Temp
+						{{ currentWeather.main.temp }}
+					</div>
+					<div class="modal-body">
+						Min Temp
+						{{ currentWeather.main.temp_min }}
+					</div>
+					<div class="modal-body">
+						Max Temp
+						{{ currentWeather.main.temp_max }}
+					</div>
+					<div class="modal-body">
+						Description
+						{{ currentWeather.dt }}
+					</div>
+					<div class="modal-body">
+						Pressure
+						{{ currentWeather.main.pressure }}
+					</div>
+					<div class="modal-body">
+						Wind Speed
+						{{ currentWeather.wind.speed }}
+					</div>
+					<div class="modal-body">
+						Sea Level
+						{{ currentWeather.main.sea_level }}
+					</div>
+					<div class="modal-body">
+						Ground Level
+						{{ currentWeather.main.grnd_level }}
+					</div>
+					<div class="modal-body">
+						Humidity Level
+						{{ currentWeather.main.humidity }}
+					</div>
+					<div class="modal-body">
+						Longitude
+						{{ currentWeather.coord.lon }}
+					</div>
+					<div class="modal-body">
+						Latitude
+						{{ currentWeather.coord.lat }}
 					</div>
 					<div class="modal-footer">
 						<button
@@ -62,15 +103,28 @@
 			<div class="weather-stats"></div>
 
 			<div>
-				<b-card title="Card title" sub-title="Card subtitle">
+				<b-card title="City Weather" sub-title="Weather Modal">
 					<b-card-text>
-						<span class="location">{{ weather.id }}</span>
+						<span class="location"
+							>City Name: {{ weather.name }}</span
+						>
 						<br />
-						<span class="location">{{ weather.coord.lon }}</span>
+						<span class="location"
+							>Current Temp: {{ weather.main.temp }}</span
+						>
 						<br />
-						<span class="location">{{
-							weather.weather[0].description
-						}}</span>
+						<span class="location"
+							>Min Temp: {{ weather.main.temp_min }}</span
+						>
+						<br />
+						<span class="location"
+							>Max Temp: {{ weather.main.temp_max }}</span
+						>
+						<br />
+						<span class="location"
+							>Weather Description: {{ weather.dt }}</span
+						>
+						<br />
 					</b-card-text>
 
 					<!-- Button trigger modal -->
@@ -79,7 +133,7 @@
 						class="btn btn-primary"
 						data-toggle="modal"
 						data-target="#exampleModal"
-            @click='fillModalData(weather)'
+						@click="fillModalData(weather)"
 					>
 						Launch demo modal
 					</button>
@@ -94,27 +148,25 @@ export default {
 	name: 'Weather',
 	data() {
 		return {
-      weatherDataList: [],
-      currentWeather: {},
-      
+			weatherDataList: [],
+			currentWeather: {},
 		};
 	},
 
 	methods: {
-    fillModalData(weather) {
-      this.currentWeather = weather;
-    }
-  },
-  
-  mounted() {
-    fetch('weather.json')
-				.then((response) => response.json())
-				.then((data) => {
-          this.weatherDataList = data;
-          this.currentWeather = data[0];
-      }
-    );
-	}
+		fillModalData(weather) {
+			this.currentWeather = weather;
+		},
+	},
+
+	mounted() {
+		fetch('weather.json')
+			.then((response) => response.json())
+			.then((data) => {
+				this.weatherDataList = data;
+				this.currentWeather = data[0];
+			});
+	},
 };
 </script>
 
@@ -174,3 +226,5 @@ button {
 	border: 1px solid #ccc;
 }
 </style>
+
+
