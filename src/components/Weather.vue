@@ -219,6 +219,10 @@ export default {
 	border-radius: 16px 0px 16px 0px;
 }
 
+.modal-body {
+	background-color: yellowgreen;
+}
+
 button {
 	padding: 10px;
 	background-color: #1aa832;
