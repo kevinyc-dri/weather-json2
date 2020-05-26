@@ -3,16 +3,20 @@
 <template>
   <div id="app">
     <Weather />
+    <!-- <Demo title="kevin" :names="['Kevin', 'John', 'Sally']"/> -->
+
   </div>
 </template>
 
 <script>
 import Weather from './components/Weather.vue'
+// import Demo from './components/Demo.vue'
 
 export default {
   name: 'app',
   components: {
-    Weather
+    Weather,
+    // Demo,
   }
 }
 </script>
