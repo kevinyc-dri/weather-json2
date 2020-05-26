@@ -3,15 +3,7 @@
 <template>
 	<div>
 		<h1>My Weather App</h1>
-		<div class="search-box">
-			<!-- <input
-					type="text"
-					class="search-bar"
-					placeholder="Search..."
-					v-model="query"
-					@keypress="fetchWeather"
-				/> -->
-		</div>
+	
 		<!-- Modal -->
 		<div
 			class="modal fade"
@@ -98,11 +90,10 @@
 			:key="weather.id"
 			class="weather-data"
 		>
-			<pre>{{ JSON.stringify(weather, null, 2) }}</pre>
+			<!-- <pre>{{ JSON.stringify(weather, null, 2) }}</pre> -->
 
-			<div class="weather-stats"></div>
-
-			<div>
+			<!-- <div class="weather-stats"></div> -->
+			<div class="weather-stats">
 				<b-card title="City Weather" sub-title="Weather Modal">
 					<b-card-text>
 						<span class="location"
@@ -172,6 +163,7 @@ export default {
 
 <style scoped>
 .weather-data {
+	background-color: wheat;
 	display: flex;
 	align-items: center;
 	margin-top: 20px;
@@ -181,6 +173,8 @@ export default {
 }
 
 .weather-stats {
+	display: flex;
+	justify-content: center;
 	flex-grow: 8;
 	text-align: left;
 	padding-left: 20px;
