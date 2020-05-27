@@ -3,7 +3,7 @@
 <template>
 	<div>
 		<h1>Vue Weather App</h1>
-	
+
 		<!-- Modal -->
 		<div
 			class="modal fade"
@@ -31,44 +31,43 @@
 					<div class="modal-body">
 						Current Temp
 						{{ currentWeather.main.temp }}
-					</div>
-					<div class="modal-body">
+						<br />
 						Min Temp
 						{{ currentWeather.main.temp_min }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Max Temp
 						{{ currentWeather.main.temp_max }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Description
 						{{ currentWeather.dt }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Pressure
 						{{ currentWeather.main.pressure }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Wind Speed
 						{{ currentWeather.wind.speed }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Sea Level
 						{{ currentWeather.main.sea_level }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Ground Level
 						{{ currentWeather.main.grnd_level }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Humidity Level
 						{{ currentWeather.main.humidity }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Longitude
 						{{ currentWeather.coord.lon }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Latitude
 						{{ currentWeather.coord.lat }}
 					</div>
@@ -225,5 +224,3 @@ button {
 	border: 1px solid #ccc;
 }
 </style>
-
-
