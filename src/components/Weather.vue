@@ -30,19 +30,18 @@
 					</div>
 					<div class="modal-body">
 						Current Temp
-						{{ currentWeather.main.temp }}
+						{{ currentWeather.main.temp }}°
 						<br />
 
-						Min Temp
-						{{ currentWeather.main.temp_min }}
+						{{ currentWeather.weather[0].description }}
 						<br />
 
-						Max Temp
-						{{ currentWeather.main.temp_max }}
+						Min 
+						{{ currentWeather.main.temp_min }}°
 						<br />
 
-						Description
-						{{ currentWeather.dt }}
+						Max
+						{{ currentWeather.main.temp_max }}°
 						<br />
 
 						Pressure
@@ -61,8 +60,8 @@
 						{{ currentWeather.main.grnd_level }}
 						<br />
 
-						Humidity Level
-						{{ currentWeather.main.humidity }}
+						Humidity 
+						{{ currentWeather.main.humidity }}%
 						<br />
 
 						Longitude
@@ -102,27 +101,28 @@
 			>
 				<!-- class="btn btn-primary" -->
 				<!-- Button trigger modal -->
-				<b-card class="city-weather" title="City Weather">
+				<b-card class="city-weather">
 					<b-card-text>
 						<span class="city-location">{{ weather.name }}</span>
 						<br />
 						<span class="location"
-							>Current Temp: {{ weather.main.temp }}</span
+							>Current Temp</span
 						>
 						<br />
 						<span class="location"
-							>Min Temp: {{ weather.main.temp_min }}</span
+							>{{ weather.main.temp }}°</span
 						>
+						
 						<br />
-						<span class="location"
-							>Max Temp: {{ weather.main.temp_max }}</span
-						>
-						<br />
-						<span class="location"
-							>Weather Description:
+						<span class="temp-descript">
 							{{ weather.weather[0].description }}</span
 						>
 						<br />
+						<span class="location"
+							>Min: {{ weather.main.temp_min }}° Max: {{ weather.main.temp_max }}°</span
+						>
+						<br />
+						
 					</b-card-text>
 				</b-card>
 			</div>
@@ -175,7 +175,9 @@ export default {
 }
 
 .weather-stats .location {
-	font-size: 30px;
+	display:flex;
+	justify-content: center;
+	font-size: 24px;
 }
 
 .modal-body {
@@ -184,12 +186,21 @@ export default {
 }
 
 .city-location {
+	display: flex;
+	justify-content: center;
 	font-size: 30px;
 	font-weight: bold;
 }
 
 .city-weather {
 	width: 100%;
+}
+
+.temp-descript {
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 24px;
 }
 
 button {
