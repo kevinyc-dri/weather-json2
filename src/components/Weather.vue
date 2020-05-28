@@ -2,16 +2,8 @@
 
 <template>
 	<div>
-		<h1>My Weather App</h1>
-		<div class="search-box">
-			<!-- <input
-					type="text"
-					class="search-bar"
-					placeholder="Search..."
-					v-model="query"
-					@keypress="fetchWeather"
-				/> -->
-		</div>
+		<h1>Vue Weather App</h1>
+
 		<!-- Modal -->
 		<div
 			class="modal fade"
@@ -39,44 +31,43 @@
 					<div class="modal-body">
 						Current Temp
 						{{ currentWeather.main.temp }}
-					</div>
-					<div class="modal-body">
+						<br />
 						Min Temp
 						{{ currentWeather.main.temp_min }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Max Temp
 						{{ currentWeather.main.temp_max }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Description
 						{{ currentWeather.dt }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Pressure
 						{{ currentWeather.main.pressure }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Wind Speed
 						{{ currentWeather.wind.speed }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Sea Level
 						{{ currentWeather.main.sea_level }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Ground Level
 						{{ currentWeather.main.grnd_level }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Humidity Level
 						{{ currentWeather.main.humidity }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Longitude
 						{{ currentWeather.coord.lon }}
-					</div>
-					<div class="modal-body">
+						<br />
+
 						Latitude
 						{{ currentWeather.coord.lat }}
 					</div>
@@ -98,15 +89,22 @@
 			:key="weather.id"
 			class="weather-data"
 		>
-			<pre>{{ JSON.stringify(weather, null, 2) }}</pre>
+			<!-- <pre>{{ JSON.stringify(weather, null, 2) }}</pre> -->
 
-			<div class="weather-stats"></div>
-
-			<div>
-				<b-card title="City Weather" sub-title="Weather Modal">
+			<!-- <div class="weather-stats"></div> -->
+			<div class="weather-stats">
+				<!-- class="btn btn-primary" -->
+				<!-- Button trigger modal -->
+					<div
+						type="button"
+						data-toggle="modal"
+						data-target="#exampleModal"
+						@click="fillModalData(weather)"
+					>
+				<b-card title="City Weather">
 					<b-card-text>
-						<span class="location"
-							>City Name: {{ weather.name }}</span
+						<span class="city-location"
+							>{{ weather.name }}</span
 						>
 						<br />
 						<span class="location"
@@ -122,22 +120,14 @@
 						>
 						<br />
 						<span class="location"
-							>Weather Description: {{ weather.dt }}</span
+							>Weather Description: {{ weather.weather[0].description }}</span
 						>
 						<br />
 					</b-card-text>
 
-					<!-- Button trigger modal -->
-					<button
-						type="button"
-						class="btn btn-primary"
-						data-toggle="modal"
-						data-target="#exampleModal"
-						@click="fillModalData(weather)"
-					>
-						Launch demo modal
-					</button>
-				</b-card>
+					
+					</b-card>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -172,6 +162,7 @@ export default {
 
 <style scoped>
 .weather-data {
+	background-color: rgba(70, 70, 70, 0.301);
 	display: flex;
 	align-items: center;
 	margin-top: 20px;
@@ -181,6 +172,8 @@ export default {
 }
 
 .weather-stats {
+	display: flex;
+	justify-content: center;
 	flex-grow: 8;
 	text-align: left;
 	padding-left: 20px;
@@ -190,33 +183,14 @@ export default {
 	font-size: 30px;
 }
 
-.search-box {
-	width: 100%;
-	margin-bottom: 30px;
+.modal-body {
+	background-color: rgb(112, 191, 255);
+	font-weight: bold;
 }
 
-.search-box .search-bar {
-	display: block;
-	width: 100%;
-	padding: 15px;
-	color: #313131;
-	font-size: 20px;
-
-	appearance: none;
-	border: none;
-	outline: none;
-	background: none;
-
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 0px 16px 0px 16px;
-	transition: 0.4s;
-}
-
-.search-box .search-bar:focus {
-	box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
-	background-color: rgba(255, 255, 255, 0.75);
-	border-radius: 16px 0px 16px 0px;
+.city-location {
+	font-size: 30px;
+	font-weight: bold;
 }
 
 button {
@@ -226,5 +200,3 @@ button {
 	border: 1px solid #ccc;
 }
 </style>
-
-
