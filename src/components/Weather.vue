@@ -32,6 +32,7 @@
 						Current Temp
 						{{ currentWeather.main.temp }}
 						<br />
+
 						Min Temp
 						{{ currentWeather.main.temp_min }}
 						<br />
@@ -92,20 +93,18 @@
 			<!-- <pre>{{ JSON.stringify(weather, null, 2) }}</pre> -->
 
 			<!-- <div class="weather-stats"></div> -->
-			<div class="weather-stats">
+			<div
+				class="weather-stats"
+				type="button"
+				data-toggle="modal"
+				data-target="#exampleModal"
+				@click="fillModalData(weather)"
+			>
 				<!-- class="btn btn-primary" -->
 				<!-- Button trigger modal -->
-					<div
-						type="button"
-						data-toggle="modal"
-						data-target="#exampleModal"
-						@click="fillModalData(weather)"
-					>
-				<b-card title="City Weather">
+				<b-card class="city-weather" title="City Weather">
 					<b-card-text>
-						<span class="city-location"
-							>{{ weather.name }}</span
-						>
+						<span class="city-location">{{ weather.name }}</span>
 						<br />
 						<span class="location"
 							>Current Temp: {{ weather.main.temp }}</span
@@ -120,14 +119,12 @@
 						>
 						<br />
 						<span class="location"
-							>Weather Description: {{ weather.weather[0].description }}</span
+							>Weather Description:
+							{{ weather.weather[0].description }}</span
 						>
 						<br />
 					</b-card-text>
-
-					
-					</b-card>
-				</div>
+				</b-card>
 			</div>
 		</div>
 	</div>
@@ -165,8 +162,7 @@ export default {
 	background-color: rgba(70, 70, 70, 0.301);
 	display: flex;
 	align-items: center;
-	margin-top: 20px;
-	margin-left: 20px;
+	margin: 20px auto;
 	border-bottom: 2px solid #ccc;
 	padding: 20px;
 }
@@ -176,7 +172,6 @@ export default {
 	justify-content: center;
 	flex-grow: 8;
 	text-align: left;
-	padding-left: 20px;
 }
 
 .weather-stats .location {
@@ -191,6 +186,10 @@ export default {
 .city-location {
 	font-size: 30px;
 	font-weight: bold;
+}
+
+.city-weather {
+	width: 100%;
 }
 
 button {
