@@ -93,10 +93,18 @@
 
 			<!-- <div class="weather-stats"></div> -->
 			<div class="weather-stats">
-				<b-card title="City Weather" sub-title="Weather Modal">
+				<!-- class="btn btn-primary" -->
+				<!-- Button trigger modal -->
+					<div
+						type="button"
+						data-toggle="modal"
+						data-target="#exampleModal"
+						@click="fillModalData(weather)"
+					>
+				<b-card title="City Weather">
 					<b-card-text>
-						<span class="location"
-							>City Name: {{ weather.name }}</span
+						<span class="city-location"
+							>{{ weather.name }}</span
 						>
 						<br />
 						<span class="location"
@@ -112,22 +120,14 @@
 						>
 						<br />
 						<span class="location"
-							>Weather Description: {{ weather.dt }}</span
+							>Weather Description: {{ weather.weather[0].description }}</span
 						>
 						<br />
 					</b-card-text>
 
-					<!-- Button trigger modal -->
-					<button
-						type="button"
-						class="btn btn-primary"
-						data-toggle="modal"
-						data-target="#exampleModal"
-						@click="fillModalData(weather)"
-					>
-						Launch demo modal
-					</button>
-				</b-card>
+					
+					</b-card>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -183,37 +183,13 @@ export default {
 	font-size: 30px;
 }
 
-.search-box {
-	width: 100%;
-	margin-bottom: 30px;
-}
-
-.search-box .search-bar {
-	display: block;
-	width: 100%;
-	padding: 15px;
-	color: #313131;
-	font-size: 20px;
-
-	appearance: none;
-	border: none;
-	outline: none;
-	background: none;
-
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 0px 16px 0px 16px;
-	transition: 0.4s;
-}
-
-.search-box .search-bar:focus {
-	box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
-	background-color: rgba(255, 255, 255, 0.75);
-	border-radius: 16px 0px 16px 0px;
-}
-
 .modal-body {
 	background-color: rgb(112, 191, 255);
+	font-weight: bold;
+}
+
+.city-location {
+	font-size: 30px;
 	font-weight: bold;
 }
 
