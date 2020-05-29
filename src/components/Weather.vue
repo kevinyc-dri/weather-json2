@@ -29,17 +29,15 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						Current Temp
+						<div class="current-temp">
 						{{ currentWeather.main.temp }}°
 						<br />
-
 						{{ currentWeather.weather[0].description }}
+						</div>
 						<br />
 
 						Min
 						{{ currentWeather.main.temp_min }}°
-						<br />
-
 						Max
 						{{ currentWeather.main.temp_max }}°
 						<br />
@@ -52,23 +50,19 @@
 						{{ currentWeather.wind.speed }}
 						<br />
 
-						Sea Level
-						{{ currentWeather.main.sea_level }}
-						<br />
-
-						Ground Level
-						{{ currentWeather.main.grnd_level }}
-						<br />
-
 						Humidity
 						{{ currentWeather.main.humidity }}%
 						<br />
 
-						Longitude
-						{{ currentWeather.coord.lon }}
+						Sea Lvl
+						{{ currentWeather.main.sea_level }}
+						Ground Lvl
+						{{ currentWeather.main.grnd_level }}
 						<br />
 
-						Latitude
+						Long
+						{{ currentWeather.coord.lon }}
+						Lat
 						{{ currentWeather.coord.lat }}
 					</div>
 					<div class="modal-footer">
