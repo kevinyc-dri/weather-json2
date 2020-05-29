@@ -36,7 +36,7 @@
 						{{ currentWeather.weather[0].description }}
 						<br />
 
-						Min 
+						Min
 						{{ currentWeather.main.temp_min }}°
 						<br />
 
@@ -60,7 +60,7 @@
 						{{ currentWeather.main.grnd_level }}
 						<br />
 
-						Humidity 
+						Humidity
 						{{ currentWeather.main.humidity }}%
 						<br />
 
@@ -104,25 +104,18 @@
 				<b-card class="city-weather">
 					<b-card-text>
 						<span class="city-location">{{ weather.name }}</span>
-						<br />
-						<span class="location"
-							>Current Temp</span
-						>
-						<br />
-						<span class="location"
+						<span class="current-temp"
 							>{{ weather.main.temp }}°</span
 						>
-						
-						<br />
 						<span class="temp-descript">
 							{{ weather.weather[0].description }}</span
 						>
 						<br />
 						<span class="location"
-							>Min: {{ weather.main.temp_min }}° Max: {{ weather.main.temp_max }}°</span
+							>min {{ weather.main.temp_min }}° max
+							{{ weather.main.temp_max }}°</span
 						>
 						<br />
-						
 					</b-card-text>
 				</b-card>
 			</div>
@@ -175,7 +168,7 @@ export default {
 }
 
 .weather-stats .location {
-	display:flex;
+	display: flex;
 	justify-content: center;
 	font-size: 24px;
 }
@@ -199,8 +192,15 @@ export default {
 .temp-descript {
 	display: flex;
 	justify-content: center;
-	font-weight: bold;
-	font-size: 24px;
+	font-weight: normal;
+	font-size: 30px;
+}
+
+.current-temp {
+	display: flex;
+	justify-content: center;
+	font-size: 46px;
+	font-weight: normal;
 }
 
 button {
