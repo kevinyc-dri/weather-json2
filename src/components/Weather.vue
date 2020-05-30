@@ -54,15 +54,18 @@
 						{{ currentWeather.main.humidity }}%
 						<br />
 
-						Sea Lvl
+						Sea level
 						{{ currentWeather.main.sea_level }}
-						Ground Lvl
+
+						Ground level
 						{{ currentWeather.main.grnd_level }}
 						<br />
 
 						Long
 						{{ currentWeather.coord.lon }}
-						Lat
+		
+
+						Latitude
 						{{ currentWeather.coord.lat }}
 					</div>
 					<div class="modal-footer">
