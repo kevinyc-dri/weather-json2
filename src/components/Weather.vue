@@ -148,6 +148,14 @@ export default {
 </script>
 
 <style scoped>
+.modal-header {
+	background-color: palegreen;
+}
+
+.modal-footer {
+	background-color: hotpink;
+}
+
 .weather-data {
 	background-color: rgba(70, 70, 70, 0.301);
 	display: flex;
