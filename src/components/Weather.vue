@@ -183,6 +183,7 @@ export default {
 }
 
 .city-weather {
+	background-color: turquoise;
 	width: 100%;
 }
 
