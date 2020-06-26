@@ -188,6 +188,7 @@ export default {
 	justify-content: center;
 	font-size: 30px;
 	font-weight: bold;
+	text-transform: capitalize;
 }
 
 .city-weather {
@@ -204,10 +205,15 @@ export default {
 }
 
 .current-temp {
+	text-transform: capitalize;
 	display: flex;
 	justify-content: center;
 	font-size: 46px;
 	font-weight: normal;
+}
+
+.location {
+	text-transform: capitalize;
 }
 
 button {
