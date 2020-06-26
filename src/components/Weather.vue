@@ -196,6 +196,7 @@ export default {
 }
 
 .temp-descript {
+	text-transform: capitalize;
 	display: flex;
 	justify-content: center;
 	font-weight: normal;
@@ -212,7 +213,7 @@ export default {
 button {
 	padding: 10px;
 	background-color: #1aa832;
-	color: white;
+	color: black;
 	border: 1px solid #ccc;
 }
 </style>
