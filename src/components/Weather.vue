@@ -214,6 +214,7 @@ export default {
 
 .location {
 	text-transform: capitalize;
+	font-weight: bold;
 }
 
 button {
