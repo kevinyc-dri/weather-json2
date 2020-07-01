@@ -180,6 +180,7 @@ export default {
 
 .modal-body {
 	background-color: rgb(112, 191, 255);
+	border: 10px solid purple;
 	font-weight: bold;
 }
 
@@ -193,7 +194,8 @@ export default {
 
 .city-weather {
 	background-color: turquoise;
-	width: 100%;
+	border: 10px solid yellow;
+	width: 80%;
 }
 
 .temp-descript {
