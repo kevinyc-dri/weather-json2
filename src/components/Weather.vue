@@ -16,7 +16,7 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">
+						<h5 class="modal-title" id="exampleModalLabel" style="margin: 0 auto">
 							{{ currentWeather.name }}
 						</h5>
 						<button
@@ -150,6 +150,12 @@ export default {
 <style scoped>
 .modal-header {
 	background-color: palegreen;
+}
+
+.modal-title {
+	justify-content: center;
+	font-size: xx-large;
+	font-weight: bold;
 }
 
 .modal-footer {
