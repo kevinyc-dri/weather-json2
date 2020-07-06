@@ -153,13 +153,13 @@ export default {
 }
 
 .modal-title {
-	justify-content: center;
+	text-align: center;
 	font-size: xx-large;
 	font-weight: bold;
 }
 
 .modal-footer {
-	background-color: hotpink;
+	background-color: lightgreen;
 }
 
 .weather-data {
