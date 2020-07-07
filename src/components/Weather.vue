@@ -185,7 +185,7 @@ export default {
 }
 
 .modal-body {
-	background-color: rgb(112, 191, 255);
+	background-color: lightgrey;
 	border: 10px solid purple;
 	font-weight: bold;
 }
