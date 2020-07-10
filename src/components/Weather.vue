@@ -15,8 +15,8 @@
 		>
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel" style="margin: 0 auto">
+					<div class="modal-header ">
+						<h5 class="modal-title" id="exampleModalLabel">
 							{{ currentWeather.name }}
 						</h5>
 						<button
@@ -153,7 +153,7 @@ export default {
 }
 
 .modal-title {
-	text-align: center;
+	width: 100%;
 	font-size: xx-large;
 	font-weight: bold;
 }
