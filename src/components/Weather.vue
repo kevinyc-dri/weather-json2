@@ -149,7 +149,7 @@ export default {
 
 <style scoped>
 .modal-header {
-	background-color: palegreen;
+	background-color: black;
 }
 
 .modal-title {
@@ -159,7 +159,7 @@ export default {
 }
 
 .modal-footer {
-	background-color: lightgreen;
+	background-color: black;
 }
 
 .weather-data {
