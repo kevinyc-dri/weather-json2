@@ -1,0 +1,50 @@
+[debug] [2021-05-11T23:07:32.486Z] ----------------------------------------------------------------------
+[debug] [2021-05-11T23:07:32.487Z] Command:       /usr/local/Cellar/node/15.14.0/bin/node /usr/local/bin/firebase init hosting
+[debug] [2021-05-11T23:07:32.488Z] CLI Version:   9.10.2
+[debug] [2021-05-11T23:07:32.488Z] Platform:      darwin
+[debug] [2021-05-11T23:07:32.488Z] Node Version:  v15.14.0
+[debug] [2021-05-11T23:07:32.489Z] Time:          Tue May 11 2021 19:07:32 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-05-11T23:07:32.489Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-05-11T23:07:32.493Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-11T23:07:32.494Z] > authorizing via signed-in user (kevinyoungchoi@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/kevinchoi/Projects/resources/misc/weather-json2
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2021-05-11T23:08:07.004Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
+ {"projectId":"kevins weather vue","name":"kevins weather vue"}
+[debug] [2021-05-11T23:08:07.255Z] <<< HTTP RESPONSE 400 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Tue, 11 May 2021 23:08:07 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=112","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-11T23:08:07.255Z] <<< HTTP RESPONSE BODY {"error":{"code":400,"message":"field [project_id] has issue [project_id contains invalid characters]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id contains invalid characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2021-05-11T23:08:07.388Z] FirebaseError: HTTP Error: 400, field [project_id] has issue [project_id contains invalid characters]
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:41:35)
+    at Request.self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:369:20)
+    at Request.emit (node:domain:470:12)
+    at Request.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:369:20)
+    at Request.emit (node:domain:470:12)
+    at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:475:28)
+    at IncomingMessage.emit (node:events:381:22)
+    at IncomingMessage.emit (node:domain:470:12)
+    at endReadableNT (node:internal/streams/readable:1307:12)
+    at processTicksAndRejections (node:internal/process/task_queues:81:21)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
