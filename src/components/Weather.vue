@@ -15,7 +15,7 @@
 		>
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
-					<div class="modal-header">
+					<div class="modal-header ">
 						<h5 class="modal-title" id="exampleModalLabel">
 							{{ currentWeather.name }}
 						</h5>
@@ -148,6 +148,20 @@ export default {
 </script>
 
 <style scoped>
+.modal-header {
+	background-color: black;
+}
+
+.modal-title {
+	width: 100%;
+	font-size: xx-large;
+	font-weight: bold;
+}
+
+.modal-footer {
+	background-color: black;
+}
+
 .weather-data {
 	background-color: rgba(70, 70, 70, 0.301);
 	display: flex;
@@ -171,7 +185,8 @@ export default {
 }
 
 .modal-body {
-	background-color: rgb(112, 191, 255);
+	background-color: black;
+	border: 4px solid white;
 	font-weight: bold;
 }
 
@@ -180,13 +195,17 @@ export default {
 	justify-content: center;
 	font-size: 30px;
 	font-weight: bold;
+	text-transform: capitalize;
 }
 
 .city-weather {
-	width: 100%;
+	background-color: turquoise;
+	border: 10px solid yellow;
+	width: 80%;
 }
 
 .temp-descript {
+	text-transform: capitalize;
 	display: flex;
 	justify-content: center;
 	font-weight: normal;
@@ -194,16 +213,22 @@ export default {
 }
 
 .current-temp {
+	text-transform: capitalize;
 	display: flex;
 	justify-content: center;
 	font-size: 46px;
 	font-weight: normal;
 }
 
+.location {
+	text-transform: capitalize;
+	font-weight: bold;
+}
+
 button {
 	padding: 10px;
 	background-color: #1aa832;
-	color: white;
+	color: black;
 	border: 1px solid #ccc;
 }
 </style>
